@@ -1,0 +1,275 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism managment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+    <style>
+        .back1 {
+            background-image: url(boat.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            /* padding-bottom: 500px; */
+        }
+
+
+        .navbar-nav {
+            margin-left: 20px;
+            border-radius: 10px;
+        }
+
+
+        .login {
+            margin-left: 43%;
+        }
+
+        * {
+
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+        }
+
+        .box {
+
+            width: 350px;
+            height: 350px;
+            background: rgb(241, 222, 222);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.090);
+            display: flex;
+            justify-content: center;
+            position: relative;
+            transition: all .4s;
+            cursor: pointer;
+        }
+
+
+
+        .box img {
+            width: 300px;
+            height: 300px;
+            margin-top: 25px;
+
+        }
+
+
+
+        .box:nth-child(1),
+        .box:nth-child(3) {
+            transform: scale(.8);
+        }
+
+        .box:hover {
+            height: 400px;
+        }
+
+        .box .details {
+            position: absolute;
+            bottom: 30px;
+            left: 25px;
+            display: flex;
+            opacity: 0;
+            color: rgb(54, 54, 54);
+            font-size: 20px;
+        }
+
+        .box:hover .details {
+            opacity: 1;
+
+        }
+
+        .first {
+            padding: 100px;
+            text-align: center;
+            padding-bottom: 150px;
+
+        }
+
+        .first h1 {
+            color: rgb(237, 243, 236);
+            font-size: 80px;
+        }
+
+        .first p {
+            color: rgb(247, 241, 241);
+            font-size: xx-large;
+        }
+
+        .places {
+            margin-top: 10px;
+            padding-top: 20px;
+            background-image: url(maldives.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back1">
+
+        <div class="fluid-container ">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark  justify-content-between ">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarText">
+                    <ul class="navbar-nav ">
+
+                        <li class="nav-item"><a href="index.html" class=" nav-link active">home</a></li>
+
+
+                        <li class="nav-item "><a href="about.html" class="nav-link">about us</a>
+                        </li>
+                        <li class="nav-item"><a href="packages.html" class="nav-link ">tour packages</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link ">contact us</a></li>
+
+
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle  me-5" href="#" data-bs-toggle="dropdown"
+                                role="button">places</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="dropdown-item">historical place</a></li>
+                                <li><a href="#" class="dropdown-item">adventure place</a></li>
+                                <li><a href="#" class="dropdown-item"> hill-station</a></li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <form class=" d-flex ">
+                    <input type="search " class="form-control " placeholder="search...">
+
+
+                    <button class="btn btn-success me-4" type="submit"> submit</button>
+                </form>
+
+            </nav>
+
+
+
+
+        </div>
+
+        <div class="first">
+            <h1>YOUR JOURNEY BEGINS</h1> <br>
+            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae vitae consequatur, </P>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="places   ">
+        <h1 class=" text-primary " style="text-align: center;"> <span class="text-success">package</span>
+            types</h1> <br>
+
+
+
+
+        <div class="container">
+            <div class="box">
+                <a href="packages.html">
+                    <img src="historical.jpg" alt="">
+                    <div class="details">
+
+                        <p>historical places</p>
+                    </div>
+                </a>
+            </div>
+
+
+
+
+            <div class="box">
+                <a href="packages.html">
+                    <img src="Hill-stations.jpg" alt="">
+                    <div class="details">
+                        <p>hill-station places</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="box">
+                <a href="packages.html">
+                    <img src="adventure.jpg" alt="">
+                    <div class="details">
+                        <p>adventure places</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<footer style="justify-content: center; text-align: center; color: white; background-color: black; padding: 10px;">
+    <p>@copyright tourism managment.all right reserved</p>
+
+    <small>design by <a href="">manoj zine</a></small>
+
+</footer>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        footer {
+          text-align: center;
+          padding: 3px;
+          background-color: DarkSalmon;
+          color: white;
+        }
+        footer {
+  display: block;
+
+        </style>
+</head>
+<body>
+    <footer>
+        <p>Author: Hege Refsnes<br>
+        <a href="mailto:hege@example.com">hege@example.com</a></p>
+      </footer>
+      
+</body>
+</html>
+
+
+<ol>
+                <h3 style="color: rgb(17, 167, 226);">SITE MAP </h3>
+                <li>About us</li><br>
+                <li>Classes</li> <br>
+                <li>Offers</li> <br>
+                <li>Location</li> <br>
+                <li>Carres at Waves Gym</li> <br>
+                <li>Membership Policy</li> <br>
+                <li>Term & Conditions</li> <br>
+              
+            </ol>
+        </div>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers</title>
+
+    <link rel="apple-touch-icon" sizes="192x192" href="favpack/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favpack/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favpack/favicon-16x16.png">
+    <link rel="manifest" href="favpack/site.webmanifest">
+    <link rel="mask-icon" href="favpack/browserconfig.xml" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            background-color: #333;
+            overflow: hidden;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        li {
+            float: none;
+
+        }
+
+        li {
+
+            display: inline-block;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+
+        }
+
+        ul,
+        li,
+        a:hover {
+
+            background-color: black;
+
+
+
+        }
+
+        ul,
+        li,
+        a {
+            list-style-type: none;
+            text-decoration: none;
+            color: whitesmoke;
+
+        }
+
+
+        /* its garidents time  */
+
+        .nav {
+            background-image: linear-gradient(to left, #c33764, #1d2671);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding-bottom: 300px;
+
+
+
+        }
+
+        .cls {
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            top: 35%;
+            left: 50%;
+            padding-right: 0px;
+            transform: translate(-50%, -50%);
+
+
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover,
+        .dropbth:hover {
+            background-color: rgb(34, 172, 96);
+
+        }
+
+        li .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(204, 204, 204);
+            min-width: 150px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+
+
+        }
+
+        .dropdown-content a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        .part {
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            margin-bottom: 50px;
+
+
+        }
+
+        .text {
+            text-decoration: none;
+
+
+        }
+
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            width: 97%;
+
+
+        }
+
+
+        .form {
+
+            line-height: 2.5;
+            font-size: 28px;
+            min-height: 50px;
+            padding: 2px 14px;
+            border-radius: 5px;
+            font-weight: 700;
+            color: rgb(104, 102, 102);
+
+        }
+
+        .select {
+            line-height: 2.5;
+            font-size: 16px;
+            min-height: 50px;
+            padding: 2px 14px;
+
+
+        }
+
+
+        input {
+            height: 40px;
+        }
+
+        .footer {
+            margin: 0px;
+            color: whitesmoke;
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 50px;
+            height: 250px;
+            background-color: rgb(53, 51, 51);
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+        }
+
+
+        .fa:hover {
+            opacity: 10;
+        }
+
+        .fa {
+            padding-left: 500px;
+            margin-left: 500px;
+            margin-top: -160px;
+            padding-bottom: 0px;
+            color: rgb(15, 170, 231);
+
+
+        }
+
+
+        .fitness {
+            margin: 0px;
+            color: rgb(161, 161, 161);
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 10px;
+            height: 50px;
+            background-color: rgb(46, 44, 44);
+        }
+
+
+        .abut {
+            margin-left: 450px;
+            margin-top: -150px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <ul>
+            <li> <a href="Home.html"><img src="images/logo the.png" style="border-radius: 50px; width: 50px; height: 50px;"></a></li>
+            <li><a href="membership.html" target="top">MEMBERSHIP</a> </li>
+            <li><a href="groupcls.html">GROUP CLASS</a></li>
+            <li><a href="PT.html" target="blank">PERSONAL TRAINING</a> </li>
+            <li><a href="offers.html" target="blank">OFFERS</a> </li>
+            <li><a href="careers.html" target="blank">CAREERS</a></li>
+            <li><a href="location.html" target="blank">LOCATION</a></li>
+
+
+
+            <li class="dropdown">
+                <a href="" class="dropbtn">SITE MAP</a>
+
+                <div class="dropdown-content">
+                    <a href="aboutus.html" target="blank">About us</a>
+                    <hr>
+                    <a href="groupcls.html" target="blank">Classes</a>
+                    <hr>
+                    <a href="offers.html" target="blank" >Offers</a>
+                    <hr>
+                    <a href="location.html" target="blank">Location</a>
+                    <hr>
+                    <a href="careers.html" target="blank">Careers At Master Gym</a>
+                    <hr>
+                    <a href="mempolicy.html">Membership Policy</a>
+                    <hr>
+                    <a href="terms.html">Terms & condition</a>
+                    <hr>
+
+
+                </div>
+
+            </li>
+
+        </ul>
+        <!-- its garidents time -->
+        <div class="cls"
+            style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: whitesmoke;">
+            <h1>CAREERS AT WAVES GYM</h1>
+            <p>Give your career the right work out with us!</p>
+        </div>
+
+    </div>
+
+
+
+    <div class="part">
+        <section class="text"
+            style="margin-top: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-left: 70px;">
+
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(100, 97, 97); line-height: 1.5;">
+
+
+                When it comes to choosing the right gym for their fitness needs, people don’t look beyond Waves Gym.
+                When it comes to making the right choice for your career, you shouldn’t look too hard either. At
+                Waves
+                Gym, we support a culture of openness, learning and empowering our exercise instructors and front
+                of
+                house staff, to do the best they can. <br> <br>
+
+                We are one of pune’s most respected fitness destinations. With a 10,000 Sq Ft space located in the
+                heart of Pune, master Gym is dedicated to making Mumbai fitter and stronger. <br> <br>
+
+                At master Gym, we constantly strive to better ourselves, and our exercise instructors are an integral
+                part of that process. A culture of inclusiveness and perseverance is what we promise. We push our team
+                to excel at whatever they set out to do and the results are there for all to see. We help our trainers
+                to constantly upgrade themselves with newer and better international certifications. Our support staff
+                too, boasts of regular upgrades and training sessions. <br><br>
+
+                We believe in creating a work environment that mirrors our core values, of hard work, determination,
+                excellence and support. Our management has an open door policy, and your suggestions and queries will
+                always be given a patient listening, and most often will be met with excellent additions and
+                implementation. <br> <br>
+
+                So if you see yourself working with a fun, young team, that is determined and poised to make a real
+                splash in the Mumbai fitness scene, please upload your resume in the form below. <br> <br>
+            </div>
+
+
+
+        </section>
+
+
+
+
+        <div style="margin-left: 30px; margin-top: 50px; padding: 0px;">
+            <h2>APPLY NOW</h2>
+            <div class="form">
+
+                <form action="master gym.html" autocomplete="off">
+                    <label for="frame"></label>
+                    <input type="text" id="name" placeholder="Frist Name" required
+                        style="width: 360px; font-size: 16px; "><br>
+
+                    <label for="name"></label>
+                    <input type="text" id="name" placeholder="Last Name" required
+                        style="width: 360px; font-size: 16px;"><br>
+
+
+
+                    <label for="mail"></label>
+                    <input type="email" id="mail" placeholder="Email" required
+                        style="width: 360px;font-size: 16px;;"><br>
+
+
+                    <label for="frame"></label>
+                    <input type="text" id="name" placeholder="Phone " required
+                        style="width: 360px;font-size: 16px;"><br>
+
+                    <label for="name"></label>
+                    <select class="select" name="select an option" style="width: 367px; color: rgb(104, 102, 102);">
+                        <option value="select"> Select an Option</option>
+                        <option value="instructor"> Pilates Reformer Instructor </option>
+                        <option value="sales"> Sales Consultant</option>
+                        <option value="club"> Club Manager</option>
+                        <option value="personal"> Personal Trainer</option>
+                        <option value="Floor"> Floor Trainer</option>
+                        <option value="fitness"> Fitnes Manager</option>
+                        <option value="care"> Customer Care Excutive</option>
+                        <option value="Group"> Group Exercise Instructor</option>
+                        <option value="diet"> Nutritionist / Dietician</option>
+                    </select>
+                    <input type="file" id="myfile" name="myfile"><br>
+
+
+            </div>
+
+            <button class="button" type="submit">
+                SUBMIT
+            </button><br>
+
+
+        </div>
+    </div>
+
+    <div class="ul">
+        <div>
+            <ol class="footer">
+                <p>
+                <h2 style="color:rgb(35, 168, 221)"> Master GYM</h2>
+                506 Morya Estate, Opposite Infiniti <br>
+                Mall, New Link Road, Andheri West, <br>
+                Mumbai – 400 053 <br>
+                Phone: +9122 6678 7970 <br>
+                Email: info@mastergym.com <br>
+
+
+                <div class="abut">
+                    <h2 style="color:rgb(35, 168, 221) ;">About The GYM</h2>
+                    <p>New year,new you! Thanks for <br> entering to win a free one-year <br> membership at master gym
+                        <br> We'll announce the winner on <br> january 2nd! <br>
+                    </p>
+                </div>
+
+
+                <div class="fa">
+
+
+                    <h2> Follow Us</h2>
+                    <a href=""><img src="facebook.png" alt="fb" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="instagram.png" alt="insta" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="twitter.png" alt="twit" width="50px" height="50px" hspace="10"></a>
+
+
+                </div>
+
+
+                </p>
+            </ol>
+            <div class="fitness" style="font-family: Arial, Helvetica, sans-serif;">
+                © 2020 Paradise Fitness and Health Pvt Ltd. All Rights Reserved.
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

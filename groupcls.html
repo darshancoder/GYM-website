@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master gym</title>
+
+    <link rel="apple-touch-icon" sizes="192x192" href="favpack/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favpack/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favpack/favicon-16x16.png">
+    <link rel="manifest" href="favpack/site.webmanifest">
+    <link rel="mask-icon" href="favpack/browserconfig.xml" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+            overflow: hidden;
+            color: whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        li {
+            float: none;
+
+        }
+
+        li {
+
+            display: inline-block;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+
+        }
+
+
+        ul,
+        li,
+        a:hover {
+
+            background-color: black;
+
+
+
+        }
+
+        ul,
+        li,
+        a {
+            list-style-type: none;
+            text-decoration: none;
+            color: whitesmoke;
+
+        }
+
+        /* its garidents time  */
+
+        .nav {
+            background-image: linear-gradient(to right, #000428, #04559c);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding-bottom: 300px;
+            opacity: 200%;
+
+
+        }
+
+        .cls {
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            top: 35%;
+            left: 50%;
+            padding-right: 0px;
+            transform: translate(-50%, -50%);
+
+
+        }
+
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover,
+        .dropbth:hover {
+            background-color: rgb(34, 172, 96);
+
+        }
+
+        li .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(204, 204, 204);
+            ;
+            min-width: 150px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+
+
+
+        }
+
+        .dropdown-content a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* zumba fitness */
+
+        .container {
+            position: relative;
+            width: 50%;
+            box-shadow: 12px 12px 5px grey;
+            margin-bottom: 100px;
+
+
+        }
+
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s linear;
+        }
+
+
+        .overlay {
+            background-image: url(images/zumba-fitness-.jpg);
+            background-repeat: no-repeat;
+            width: 630px;
+            height: 430px;
+
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+        }
+
+        .text {
+            font-size: 23px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: 150px;
+            color: #000;
+        }
+
+        /* weight lifting */
+
+        .container2 {
+            position: relative;
+            width: 50%;
+            margin-left: 10px;
+            box-shadow: 12px 12px 5px grey;
+            margin-bottom: 100px;
+            margin-left: 50px;
+        }
+
+        .image2 {
+            display: block;
+            width: 100%;
+
+        }
+
+        .overlay2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s linear;
+
+        }
+
+        .overlay2 {
+            background-image: url(images/weightlifting-tattoos\ 1.jpg);
+            background-repeat: no-repeat;
+            width: 700px;
+            height: 500px;
+
+        }
+
+        .container2:hover .overlay2 {
+            opacity: 1;
+        }
+
+        .text2 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: 200px;
+        }
+
+
+        /* cycle studio */
+
+        .container3 {
+            position: relative;
+            width: 50%;
+            box-shadow: 12px 12px 5px grey;
+            margin-bottom: 100px;
+        }
+
+        .image3 {
+            display: block;
+            width: 100%;
+
+        }
+
+        .overlay3 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease-out;
+
+        }
+
+        .overlay3 {
+            background-image: url(images/cycling2.jpg);
+            background-repeat: no-repeat;
+            width: 700px;
+            height: 500px;
+
+        }
+
+        .container3:hover .overlay3 {
+            opacity: 1;
+        }
+
+        .text3 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: 150px;
+        }
+
+
+
+        /* Aeril yoga */
+
+        .container4 {
+            position: relative;
+            width: 50%;
+            box-shadow: 12px 12px 5px grey;
+            margin-bottom: 100px;
+            margin-left: 200px;
+        }
+
+        .image4 {
+            display: block;
+            width: 100%;
+
+        }
+
+        .overlay4 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease-in-out;
+
+        }
+
+        .overlay4 {
+            background-image: url(images/Yoga-1c\ \(1\).jpg);
+            background-repeat: no-repeat;
+            width: 700px;
+            height: 500px;
+
+        }
+
+        .container4:hover .overlay4 {
+            opacity: 1;
+        }
+
+        .text4 {
+            color: white;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin-top: -20px;
+        }
+
+
+        /* Power Yoga */
+
+        .container5 {
+            position: relative;
+            width: 50%;
+            box-shadow: 12px 12px 5px grey;
+            margin-bottom: 100px;
+
+        }
+
+        .image5 {
+            display: block;
+            width: 100%;
+
+        }
+
+        .overlay5 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease-in-out;
+
+        }
+
+        .overlay5 {
+            background-image: url(images/power\ yoga\ 2.jpg);
+            background-repeat: no-repeat;
+            width: 700px;
+            height: 500px;
+
+        }
+
+        .container5:hover .overlay5 {
+            opacity: 1;
+        }
+
+        .text5 {
+            color: rgb(165, 70, 70);
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            padding-bottom: 200px;
+
+
+        }
+
+
+
+
+
+        .footer {
+            margin: 0px;
+            color: whitesmoke;
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 50px;
+            height: 250px;
+            background-color: rgb(53, 51, 51);
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+        }
+
+
+        .fa:hover {
+            opacity: 10;
+        }
+
+        .fa {
+            padding-left: 500px;
+            margin-left: 500px;
+            margin-top: -160px;
+            padding-bottom: 0px;
+            color: rgb(15, 170, 231);
+
+
+        }
+
+
+        .fitness {
+            margin: 0px;
+            color: rgb(161, 161, 161);
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 10px;
+            height: 50px;
+            background-color: rgb(46, 44, 44);
+        }
+
+
+        .abut {
+            margin-left: 450px;
+            margin-top: -150px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <div class="nav">
+        <ul>
+            <li> <a href="Home.html"><img src="images/logo the.png"
+                        style="border-radius: 50px; width: 50px; height: 50px;"></a></li>
+            <li><a href="membership.html" target="top">MEMBERSHIP</a> </li>
+            <li><a href="group class.html" target="_self">GROUP CLASS</a></li>
+            <li><a href="PT.html" target="blank">PERSONAL TRAINING</a> </li>
+            <li><a href="offers.html" target="blank">OFFERS</a> </li>
+            <li><a href="careers.html" target="blank">CAREERS</a></li>
+            <li><a href="location.html" target="blank">LOCATION</a></li>
+            <li class="dropdown">
+                <a class="dropbtn">SITE MAP</a>
+
+                <div class="dropdown-content">
+                    <a href="aboutus.html" target="blank">About us</a>
+                    <hr>
+                    <a href="groupcls.html" target="blank">Classes</a>
+                    <hr>
+                    <a href="offers.html" target="blank">Offers</a>
+                    <hr>
+                    <a href="location.html" target="blank">Location</a>
+                    <hr>
+                    <a href="careers.html" target="blank">Careers At Master Gym</a>
+                    <hr>
+                    <a href="mempolicy.html">Membership Policy</a>
+                    <hr>
+                    <a href="terms.html">Terms & condition</a>
+                    <hr>
+
+
+                </div>
+
+            </li>
+
+
+
+        </ul>
+    </div>
+    <div>
+        <!-- its garidents time -->
+        <div class="cls"
+            style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: whitesmoke;">
+            <h1> GROUP CLASSES</h1>
+            <p> The Best Group Exercise Classes In Pune</p>
+        </div>
+    </div>
+
+
+
+    <div><br>
+
+        <!-- zumba fitness -->
+        <div style="display: flex;">
+            <div class="container">
+                <img src="images/zumba fitnness 2.jpg" alt="Avatar" class="image" width="300px" height="300px">
+                <div class="overlay">
+                    <div class="text"><a href="#"><b style="color: orangered;"> ZUMBA FITNESS </b></a> </div>
+                    <p style="text-align: center; margin-top: 490px; font-weight: 700;"> <a href="#"><mark>
+                                ZUMBA FITNESS
+                            </mark></a> </p>
+
+                </div>
+            </div><br>
+            <div
+                style="margin-left: 50px; font-size: 16px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; color: rgb(78, 76, 76);">
+                <h2> GIVE YOUR CALORIES ONE LAST DANCE WITH ZUMBA! </h2>
+                Zumba is pretty much the coolest workout ever! Dance to great music, with terrific people, <br> in the
+                most energetic environment and enjoy the 60 minute party! Salsa, Merengue, Tango, <br> Hip-Hop and
+                Bollywood are just a few of the super awesome dances you’ll be grooving to, whilst turning up your
+                fitness regime. <br><br>
+
+                <h3> Benefits: </h3>
+
+                <b>1.</b> Burn lots of calories <br>
+                <b>2.</b> Total body Toning <br>
+                <b>3.</b> Increases body coordination <br>
+                <b>4.</b> Promotes endurance and improves posture <br>
+                <b>5.</b> Reduces anxiety <br>
+                <b>6.</b> Improves mental health and positivity <br>
+            </div>
+        </div>
+
+
+
+
+        <!-- Weight lifiting -->
+
+        <div style="display: flex;">
+
+            <div
+            style="font-size: 16px;  color: rgb(78, 76, 76); margin-top: 50px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; margin-left: 15px;">
+
+            <h2> CROSSFIT GROUP TRAINING CLASS </h2>
+            <h3> WHAT IS CROSSFIT?</h3>
+
+            CrossFit is a high-intensity, strength, and conditioning workout that consists of a wide variety of <br>
+            functional movements – many of which you would perform daily throughout your everyday life (e.g., <br>
+            pushing, pulling, squatting, sitting up, etc.) <br> <br>
+
+            CrossFit workouts include variations of these movements with a strong focus on load, distance, <br> and
+            speed. Each exercise typically lasts a set period or until a certain amount of work has been completed. <br>
+            CrossFit workouts are different each day, and Our Trainers can modify every exercise according to an <br>
+            individual’s ability regardless of their age and fitness levels. <br><br>
+        </div>
+            <div class="container2">
+                <a href=""> <img src="images/weight strength-man.jpg" alt="Avatar" class="image2" width="300px"
+                        height="500px">
+                    <div class="overlay2">
+                        <div class="text2" style="border-bottom: 1px black;"><a href="#"><b style="color: orangered;">
+                                    CROSSFIT GROUP TRAINING CLASS</b></a>
+                        </div> <br><br>
+                        <p style="text-align: center; margin-top: 490px; font-weight: 700;"> <a href="#">
+                                <mark>CROSSFIT GROUP
+                                    TRAINING CLASS </mark></a></p>
+
+                    </div>
+            </div><br>
+
+           
+        </div>
+
+        <!-- sTudio cycling -->
+<div style="display: flex;">
+
+        <div class="container3">
+            <a href=""> <img src="images/cycling.jpg" alt="Avatar" class="image3" width="500px" height="500px">
+                <div class="overlay3">
+                    <div class="text3" style="color: rgb(255, 27, 27); "><a href="#"> <b
+                                style="color: rgb(233, 20, 20);"> STUDIO CYCLING</b></a></div> <br><br>
+                    <p style="text-align: center; margin-top: 490px; font-weight: 700;"> <a href="#"> <mark> STUDIO
+                                CYCLING </mark> </a>
+                    </p>
+
+                </div>
+        </div>
+        <div
+        style="margin-left: 70px; font-size: 16px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; color: rgb(78, 76, 76);">
+        <h2>TRANSFORM YOUR BODY AND FREE YOUR MIND </h2>
+        Fancy losing weight and toning up in a jiffy? Ditch investing hours on <br> the treadmill and head to Waves’ Studio Cycling classes! <br> In just 45 minutes, you can burn as many as 700 calories. <br> <br>
+        
+        Our studio cycling sessions are a dance party on a bike. Set in a <br> dark room with loud music, you will spend most of your time on <br> the bike seat doing choreography like push-ups on the handlebars <br> designed to work the core. Trust us, it would be the <br> sweatiest party you’d have ever attended! <br> <br>
+
+        
+        <h3>   BENEFITS OF SPINNING: </h3>
+
+        <b>1.</b>    Improves cardiovascular health and lung capacity <br>
+        <b>2.</b> Builds and tones muscles, increases stamina <br>
+        <b>3.</b>  Helps lose unwanted fat, quicker<br>
+        <b>4.</b>   Improves mental health <br>
+        <b>5.</b>High intensity and low impact nature makes it easy even for beginners <br>
+    </div>
+    </div>
+
+        <!--  aerial Yoga -->
+<div style="display: flex;">
+    
+    <div
+    style="font-size: 16px;  color: rgb(78, 76, 76); margin-top: 50px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; margin-left: 70px;" >
+
+       <h2> AERIAL YOGA CLASSES </h2>
+Aerial Yoga is a hybrid exercise form comprising of traditional <br> yoga poses,  pilates and dance. It makes use of a silk <br> hammock, suspended over  a yoga mat. It adds an interesting <br> challenge in completing complex  asanas. It helps you burn body <br>fat while building toned and lean muscles. Want to achieve <br> a Zen state of mind? Then this one’s for you! <br><br>
+
+
+
+
+<h3> BENEFITS OF AERIAL YOGA</h3>
+
+        <b>1.</b>   Strengthens core muscles <br>
+        <b>2.</b>Increases blood flow and supply <br>
+        <b>3.</b> Works in reducing migraines and improves breathing<br>
+        <b>4.</b> Aids in improving posture<br>
+        <b>5.</b> increase spinal flexibility and movement<br>
+        <b>5.</b> Calms you and reduces stress<br>
+        
+
+
+    </div>
+    
+    <div class="container4">
+            <a href=""> <img src="images/Aerial_Yoga.jpg" alt="Avatar" class="image4" width="500px" height="500px">
+                <div class="overlay4">
+                    <div class="text4" style="color: black; "><a href="#"> AERIAL YOGA</a></div> <br><br>
+                    <p style="text-align: center; margin-top: 490px; font-weight: 700;"> <a href="#"> <mark> AERIAL YOGA
+                            </mark></a></p>
+
+                </div>
+        </div>
+
+    </div>
+
+
+
+        <!-- Power YOGA -->
+
+       <div style="display: flex;">
+
+       <div class="container5">
+            <a href=""> <img src="images/power yoga.jpg" alt="Avatar" class="image5" width="500px" height="500px">
+                <div class="overlay5">
+                    <div class="text5" style="color: black; "><a href="#"> <b style="color:darkturquoise;;"> POWER YOGA
+                            </b></a></div> <br><br>
+                    <p style="text-align: center; margin-top: 490px; font-weight: 700;"> <a href="#"> <mark> POWER YOGA
+                            </mark></a></p>
+
+                </div>
+        </div>
+
+        <div
+        style="margin-left: 50px; font-size: 15px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; color: rgb(78, 76, 76);">
+       <h2> POWER YOGA </h2>
+        Power Yoga at Waves Gym is an intense workout that will <br> exercise your sweat glands to full potential! <br>
+        
+        You not only burn an insane amount of calories here, <br> but also improve flexibility, body balance and core strength. <br> After the 60 minute class, you’ll definitely leave <br> with a positive glow on your face and skip in your step! <br> <br>
+
+
+        <h3> Benefits: </h3>
+
+        <b>1.</b>Promotes weight loss and metabolism <br>
+        <b>2.</b> Improves muscle tone, mood and quality of sleep <br>
+        <b>3.</b> Builds concentration and memory<br>
+        <b>4.</b>  Builds confidence<br>
+        <b>5.</b>Improves bone density and flexibilityy <br>
+        <b>6.</b> Improves lung capacity and increases blood flow <br>
+    </div>
+
+    </div>
+
+
+    </div>
+
+
+    <div class="ul">
+        <div>
+            <ol class="footer">
+                <p>
+                <h2 style="color:rgb(35, 168, 221)"> Master GYM</h2>
+                506 Morya Estate, Opposite Infiniti <br>
+                Mall, New Link Road, Andheri West, <br>
+                Mumbai – 400 053 <br>
+                Phone: +9122 6678 7970 <br>
+                Email: info@mastergym.com <br>
+
+
+                <div class="abut">
+                    <h2 style="color:rgb(35, 168, 221) ;">About The GYM</h2>
+                    <p>New year,new you! Thanks for <br> entering to win a free one-year <br> membership at master gym
+                        <br> We'll announce the winner on <br> january 2nd! <br>
+                    </p>
+                </div>
+
+
+                <div class="fa">
+
+
+                    <h2> Follow Us</h2>
+                    <a href=""><img src="facebook.png" alt="fb" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="instagram.png" alt="insta" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="twitter.png" alt="twit" width="50px" height="50px" hspace="10"></a>
+
+
+                </div>
+
+
+                </p>
+            </ol>
+            <div class="fitness" style="font-family: Arial, Helvetica, sans-serif;">
+                © 2020 Paradise Fitness and Health Pvt Ltd. All Rights Reserved.
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

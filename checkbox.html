@@ -1,0 +1,517 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js no-svg ie ie6 lt-ie9 lt-ie8 lt-ie7"lang="en-US"> <![endif]-->
+<!--[if IE 7]><html class="no-js no-svg ie ie7 lt-ie9 lt-ie8"lang="en-US"> <![endif]-->
+<!--[if IE 8]><html class="no-js no-svg ie ie8 lt-ie9"lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js no-svg"lang="en-US"> <!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Be Strong">
+    <link rel="stylesheet" href="https://wavesgym.com/wp-content/themes/gfx-timber-v1/style.css" type="text/css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="author" href="https://wavesgym.com/wp-content/themes/gfx-timber-v1/humans.txt" />
+    <link rel="pingback" href="https://wavesgym.com/xmlrpc.php" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+	<script src="https://use.typekit.net/hsk4ulk.js"></script>
+	<script type="rocketlazyloadscript">try{Typekit.load({ async: true });}catch(e){}</script><meta name='robots' content='max-image-preview:large' />
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		var ajaxurl = 'https://wavesgym.com/wp-admin/admin-ajax.php';
+		</script>
+		
+	<!-- This site is optimized with the Yoast SEO Premium plugin v15.0 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Best Gym for Exercise &amp; Weight Loss Training in Mumbai | Waves Gym</title>
+	<meta name="description" content="We are the best gym in Mumbai. Experience the best Personal Training with Certified Personal Gym Trainers &amp; 1500 Sq.Ft. Open Air CrossFit Area!" />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://wavesgym.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Best Gym for Exercise &amp; Weight Loss Training in Mumbai | Waves Gym" />
+	<meta property="og:description" content="We are the best gym in Mumbai. Experience the best Personal Training with Certified Personal Gym Trainers &amp; 1500 Sq.Ft. Open Air CrossFit Area!" />
+	<meta property="og:url" content="https://wavesgym.com/" />
+	<meta property="og:site_name" content="Waves Gym" />
+	<meta property="article:publisher" content="https://business.facebook.com/wavesgym" />
+	<meta property="article:modified_time" content="2021-08-31T18:48:57+00:00" />
+	<meta property="og:image" content="https://wavesgym.com/wp-content/uploads/2019/10/Vinnet.jpg" />
+	<meta property="og:image:width" content="3000" />
+	<meta property="og:image:height" content="2000" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@wavesgym" />
+	<meta name="twitter:site" content="@wavesgym" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://wavesgym.com/#organization","name":"Waves Gym","url":"https://wavesgym.com/","sameAs":["https://business.facebook.com/wavesgym","https://www.instagram.com/wavesgym","https://www.linkedin.com/company/wavesgym/","https://www.youtube.com/channel/UChQpDnMAIIlJDnmPsq0rG7Q/featured?view_as=subscriber","https://twitter.com/wavesgym"],"logo":{"@type":"ImageObject","@id":"https://wavesgym.com/#logo","inLanguage":"en-US","url":"https://wavesgym.com/wp-content/uploads/2019/02/Waves-Gym-Logo.jpg","width":1275,"height":1275,"caption":"Waves Gym"},"image":{"@id":"https://wavesgym.com/#logo"}},{"@type":"WebSite","@id":"https://wavesgym.com/#website","url":"https://wavesgym.com/","name":"Waves Gym","description":"Be Strong","publisher":{"@id":"https://wavesgym.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://wavesgym.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://wavesgym.com/#primaryimage","inLanguage":"en-US","url":"https://wavesgym.com/wp-content/uploads/2019/10/Vinnet.jpg","width":3000,"height":2000,"caption":"Waves Gym Andheri West Mumbai"},{"@type":"WebPage","@id":"https://wavesgym.com/#webpage","url":"https://wavesgym.com/","name":"Best Gym for Exercise & Weight Loss Training in Mumbai | Waves Gym","isPartOf":{"@id":"https://wavesgym.com/#website"},"about":{"@id":"https://wavesgym.com/#organization"},"primaryImageOfPage":{"@id":"https://wavesgym.com/#primaryimage"},"datePublished":"2017-10-11T10:02:32+00:00","dateModified":"2021-08-31T18:48:57+00:00","description":"We are the best gym in Mumbai. Experience the best Personal Training with Certified Personal Gym Trainers & 1500 Sq.Ft. Open Air CrossFit Area!","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://wavesgym.com/"]}]}]}</script>
+	<meta name="google-site-verification" content="bHgLxXERCj92VCa2ac5Wy-5SnTp6fsR36dv7D3JsHhM" />
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Waves Gym &raquo; Feed" href="https://wavesgym.com/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='elementor-frontend-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=2.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-694-css'  href='https://wavesgym.com/wp-content/uploads/elementor/css/post-694.css?ver=1583914094' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://wavesgym.com/wp-includes/css/dist/block-library/style.min.css?ver=5.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-animations-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=2.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-pro-css'  href='https://wavesgym.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=2.8.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=2.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=2.9.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css'  href='https://wavesgym.com/wp-content/uploads/elementor/css/global.css?ver=1583914094' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-1383-css'  href='https://wavesgym.com/wp-content/uploads/elementor/css/post-1383.css?ver=1630435734' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.12.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-fa-brands-css'  href='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=5.12.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=2.9.5' id='font-awesome-4-shim-js'></script>
+<link rel="https://api.w.org/" href="https://wavesgym.com/wp-json/" /><link rel="alternate" type="application/json" href="https://wavesgym.com/wp-json/wp/v2/pages/1383" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wavesgym.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://wavesgym.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8.1" />
+<link rel='shortlink' href='https://wavesgym.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://wavesgym.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwavesgym.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://wavesgym.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwavesgym.com%2F&#038;format=xml" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//wavesgym.com/?wordfence_lh=1&hid=C9CA1A3B8AEBFD05EF26C227C9B1C4AD');
+</script><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-20525145-1"></script>
+<script type="rocketlazyloadscript">
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-20525145-1');
+gtag('config', 'AW-910597992');
+</script><link rel="icon" href="https://wavesgym.com/wp-content/uploads/2021/01/cropped-WG-Logo-WP-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://wavesgym.com/wp-content/uploads/2021/01/cropped-WG-Logo-WP-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://wavesgym.com/wp-content/uploads/2021/01/cropped-WG-Logo-WP-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://wavesgym.com/wp-content/uploads/2021/01/cropped-WG-Logo-WP-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			#wrapper-primary-navigation{
+	z-index: 9999!important;
+}
+#site-header #wrapper-primary-navigation{
+	z-index: 9999!important;
+}		</style>
+		
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/css/uikit.min.css" />
+	</head>
+	<body class="home page-template-default page page-id-1383 wp-custom-logo desktop chrome best-gym-in-mumbai elementor-default elementor-page elementor-page-1383" data-template="base.twig">
+		<div class="uk-offcanvas-content">
+		<header class="header" id="site-header">			<div class="uk-position-top" id="wrapper-primary-navigation">
+				<div class="uk-container">
+					<nav class="uk-navbar-container uk-navbar-transparent uk-navbar" data-uk-navbar=""><div class="uk-navbar-left">
+	<div class="uk-navbar-item">
+		<a class="hdr-logo-link" href="https://wavesgym.com" rel="home"><img src="https://wavesgym.com/wp-content/uploads/2019/02/logo-waves-gym-reverse.png">
+		</a>
+	</div>
+</div>
+<div class="uk-navbar-right">
+	<ul class="uk-navbar-nav uk-visible@m" id="nav-primary-desktop">		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-2016 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/membership/">Membership</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1391 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/classes/">Group Classes</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1945 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/personal-training/">Personal Training</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-2724 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/nutrition-counseling/">Nutrition Counseling</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1390 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/offers/">Offers</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1389 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/careers/">Careers</a>		</li>		<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1388 uk-light">
+			<a class="uk-navbar-item nav-main-link" target="" href="https://wavesgym.com/location/">Location</a>		</li>	</ul>
+	<ul class="uk-navbar-nav uk-hidden@m">
+		<li><a class="uk-navbar-toggle uk-navbar-toggle-icon uk-icon uk-hidden@m" data-uk-toggle="" data-uk-navbar-toggle-icon="" href="#offcanvas-nav"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a></li>
+	</ul>
+</div>					</nav><!-- #nav -->
+				</div>
+			</div>		</header>
+
+		<section id="content" role="main" class="content-wrapper">			<div class="wrapper">	<div class="content-wrapper">
+		<article class="post-type-page" id="post-1383">
+			<section class="article-content">
+				<!-- <h1 class="article-h1">Home</h1> -->
+				<div class="article-body">		<div data-elementor-type="wp-post" data-elementor-id="1383" class="elementor elementor-1383" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-gk8w843 elementor-section-stretched elementor-section-full_width elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle elementor-section elementor-top-section" data-id="gk8w843" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-20n9yfk elementor-column elementor-col-100 elementor-top-column" data-id="20n9yfk" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-hvhya02 elementor--v-position-bottom elementor--h-position-center elementor-arrows-position-inside elementor-pagination-position-inside elementor-widget elementor-widget-slides" data-id="hvhya02" data-element_type="widget" data-settings="{&quot;navigation&quot;:&quot;both&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;transition&quot;:&quot;slide&quot;,&quot;transition_speed&quot;:500}" data-widget_type="slides.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-swiper">
+			<div class="elementor-slides-wrapper elementor-main-swiper swiper-container" dir="ltr" data-animation="">
+				<div class="swiper-wrapper elementor-slides">
+					<div class="elementor-repeater-item-10a0c3b swiper-slide"><div class="swiper-slide-bg"></div><div class="elementor-background-overlay"></div><div class="swiper-slide-inner" ><div class="swiper-slide-contents"><div class="elementor-slide-heading">Here For You, Here To Stay!</div><div class="elementor-slide-description">Open Daily From 6:00 AM to 10:00 PM</div><a href="https://wavesgym.com/membership/" class="elementor-button elementor-slide-button elementor-size-lg">Join Now</a></div></div></div><div class="elementor-repeater-item-bba3584 swiper-slide"><div class="swiper-slide-bg"></div><div class="elementor-background-overlay"></div><div class="swiper-slide-inner" ><div class="swiper-slide-contents"><div class="elementor-slide-heading">Personal Training</div><div class="elementor-slide-description">Certified Personal Trainers. Dedicated Personal Training Studio. <Br/>Your personal space to reach your fitness goals! </div><a href="https://wavesgym.com/personal-training/" class="elementor-button elementor-slide-button elementor-size-lg">Book A Free Session Now</a></div></div></div>				</div>
+															<div class="swiper-pagination"></div>
+																<div class="elementor-swiper-button elementor-swiper-button-prev">
+							<i class="eicon-chevron-left" aria-hidden="true"></i>
+							<span class="elementor-screen-only">Previous</span>
+						</div>
+						<div class="elementor-swiper-button elementor-swiper-button-next">
+							<i class="eicon-chevron-right" aria-hidden="true"></i>
+							<span class="elementor-screen-only">Next</span>
+						</div>
+												</div>
+		</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+				<section class="elementor-element elementor-element-d925e31 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d925e31" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-673866e elementor-column elementor-col-100 elementor-top-column" data-id="673866e" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<section class="elementor-element elementor-element-f5b1231 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="f5b1231" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-wider">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-25fc331 elementor-column elementor-col-50 elementor-inner-column" data-id="25fc331" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-5549d07 elementor-widget elementor-widget-heading" data-id="5549d07" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-large">Welcome Forward!</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-897f768 elementor-widget elementor-widget-text-editor" data-id="897f768" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p><span data-preserver-spaces="true">Waves Gym, Mumbai’s premier fitness gym in Andheri West with internationally certified personal trainers, is waiting for you!</span></p><p><span data-preserver-spaces="true">We are offering you the chance to get fit the fun way with a <a href="https://wavesgym.com/offers/1-day-guest-pass/">Free Day Pass</a>! </span></p><p><span data-preserver-spaces="true">H</span><span data-preserver-spaces="true">igh octane, energetic music, and a fun, motivating environment, Waves Gym is your fitness destination!</span></p><ul><li><a href="https://wavesgym.com/personal-training/"><span data-preserver-spaces="true">Internationally Certified Personal Trainers</span></a></li><li><a href="https://wavesgym.com/personal-training/"><span data-preserver-spaces="true">Dedicated Personal Training Studio</span></a></li><li><span data-preserver-spaces="true">1500 Sq Ft Open Air CrossFit Studio</span></li><li><span data-preserver-spaces="true">Open 7 days from 6:00 AM to 10:00 PM</span></li><li><a href="https://wavesgym.com/location/"><span data-preserver-spaces="true">Convenient Location</span></a></li><li><a href="https://wavesgym.com/classes/"><span data-preserver-spaces="true">Beginner-friendly Group Fitness Classes</span></a></li><li><span data-preserver-spaces="true">Clean, Comfortable, Safe Environment</span></li><li><span data-preserver-spaces="true">Book Your Favorite Classes, Track Your Workout &amp; Diet Plan Via Our Free App</span></li><li>Complimentary Valet Parking</li></ul></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+				<div class="elementor-element elementor-element-c31628b elementor-column elementor-col-50 elementor-inner-column" data-id="c31628b" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e1059fd elementor-widget elementor-widget-heading" data-id="e1059fd" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h3 class="elementor-heading-title elementor-size-large">TAKE YOUR FITNESS TO THE NEXT LEVEL WITH OUR CERTIFIED PERSONAL TRAINERS.</h3>		</div>
+				</div>
+				<div class="elementor-element elementor-element-ee2a54d elementor-widget elementor-widget-text-editor" data-id="ee2a54d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-text-editor elementor-clearfix"><p>Our internationally certified gym trainers help accomplish your fitness and weight loss goals, quicker. They aid in guiding you through a balanced combination of cardio, aerobic exercise, strength, and weight training with the help of the latest training techniques, technology, and high-end fitness equipment. Our personal gym trainers help you turn the IMPOSSIBLE to I’M’POSSIBLE.</p><p>Our personal trainers customize and personalize gym workouts as per individual needs and requirements. Pair this up with their fully guided nutrition program to attain the best results.</p><p>Waves Gym trainers are also accredited with Special Population Training. They are specially trained to cater to a wide variety of audiences. </p></div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper -->			</div>
+
+
+
+		</section><footer class="uk-section-secondary">
+	<div class="uk-container uk-section">
+		<div class="uk-grid uk-child-width-1-4@l" data-uk-grid="">
+			<div class="uk-first-column"><div><h3 class="gfx-footer-header">Waves Gym</h3>			<div class="textwidget"><p>506 Morya Estate, Opposite Infiniti Mall, New Link Road, Andheri West, Mumbai &#8211; 400 053<br />
+<b>Phone:</b> +9122 6678 7970<br />
+<b>Email:</b> info@wavesgym.com</p>
+</div>
+		</div>
+			</div>
+
+			<div>
+			</div>
+			<div><div><h3 class="gfx-footer-header">Sitemap</h3><div class="menu-footer-sitemap-navigation-container"><ul id="menu-footer-sitemap-navigation" class="menu"><li id="menu-item-1402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1402"><a href="https://wavesgym.com/about-us/">About Us</a></li>
+<li id="menu-item-1394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1394"><a href="https://wavesgym.com/classes/">Classes</a></li>
+<li id="menu-item-1395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1395"><a href="https://wavesgym.com/offers/">Offers</a></li>
+<li id="menu-item-1397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1397"><a href="https://wavesgym.com/location/">Location</a></li>
+<li id="menu-item-1396" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1396"><a href="https://wavesgym.com/careers/">Careers at Waves Gym</a></li>
+<li id="menu-item-1399" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1399"><a href="https://wavesgym.com/membership-policy/">Membership Policy</a></li>
+<li id="menu-item-1401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1401"><a href="https://wavesgym.com/terms-conditions/">Terms &#038; Conditions</a></li>
+</ul></div></div>
+			</div>
+			<div><div><h3 class="gfx-footer-header">Follow Us</h3>		<div data-elementor-type="page" data-elementor-id="694" class="elementor elementor-694 elementor-bc-flex-widget" data-elementor-settings="[]">
+			<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+							<section class="elementor-element elementor-element-6afdec3 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="6afdec3" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-row">
+				<div class="elementor-element elementor-element-ab514a7 elementor-column elementor-col-100 elementor-top-column" data-id="ab514a7" data-element_type="column">
+			<div class="elementor-column-wrap  elementor-element-populated">
+					<div class="elementor-widget-wrap">
+				<div class="elementor-element elementor-element-e9d90d5 elementor-shape-circle elementor-widget elementor-widget-social-icons" data-id="e9d90d5" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper">
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-grow elementor-repeater-item-bf7f69a" href="http://facebook.com/wavesgym" target="_blank">
+					<span class="elementor-screen-only">Facebook</span>
+											<i class="fa fa-facebook"></i>
+									</a>
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-grow elementor-repeater-item-8231884" href="http://twitter.com/wavesgym" target="_blank">
+					<span class="elementor-screen-only">Twitter</span>
+											<i class="fa fa-twitter"></i>
+									</a>
+							<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-grow elementor-repeater-item-659f6c9" href="http://instagram.com/wavesgym" target="_blank">
+					<span class="elementor-screen-only">Instagram</span>
+											<i class="fa fa-instagram"></i>
+									</a>
+					</div>
+				</div>
+				</div>
+						</div>
+			</div>
+		</div>
+						</div>
+			</div>
+		</section>
+						</div>
+			</div>
+		</div>
+		</div><div><div class="textwidget custom-html-widget"><style type="text/css">
+	.hdr-logo-link img{
+		max-height:56px!important;	
+	}
+</style></div></div>
+			</div>
+			<!-- <div>
+				<h4>Subscribe</h4>
+				<form class="uk-grid uk-grid-collapse" action="price.html" data-uk-grid="">
+					<div class="uk-width-expand uk-first-column">
+						<input class="uk-input" type="email" required="" name="email" placeholder="Your E-mail">
+					</div>
+					<div class="uk-width-auto">
+						<button class="uk-button uk-button-primary uk-icon" data-uk-icon="check"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <polyline fill="none" stroke="#000" stroke-width="1.1" points="4,10 8,15 17,4"></polyline></svg></button>
+					</div>
+				</form>
+				<h4>Social Media</h4>
+				<a href="" class="uk-icon-button uk-margin-small-right uk-icon" data-uk-icon="facebook"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M11,10h2.6l0.4-3H11V5.3c0-0.9,0.2-1.5,1.5-1.5H14V1.1c-0.3,0-1-0.1-2.1-0.1C9.6,1,8,2.4,8,5v2H5.5v3H8v8h3V10z"></path></svg></a>
+				<a href="" class="uk-icon-button uk-margin-small-right uk-icon" data-uk-icon="twitter"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M19,4.74 C18.339,5.029 17.626,5.229 16.881,5.32 C17.644,4.86 18.227,4.139 18.503,3.28 C17.79,3.7 17.001,4.009 16.159,4.17 C15.485,3.45 14.526,3 13.464,3 C11.423,3 9.771,4.66 9.771,6.7 C9.771,6.99 9.804,7.269 9.868,7.539 C6.795,7.38 4.076,5.919 2.254,3.679 C1.936,4.219 1.754,4.86 1.754,5.539 C1.754,6.82 2.405,7.95 3.397,8.61 C2.79,8.589 2.22,8.429 1.723,8.149 L1.723,8.189 C1.723,9.978 2.997,11.478 4.686,11.82 C4.376,11.899 4.049,11.939 3.713,11.939 C3.475,11.939 3.245,11.919 3.018,11.88 C3.49,13.349 4.852,14.419 6.469,14.449 C5.205,15.429 3.612,16.019 1.882,16.019 C1.583,16.019 1.29,16.009 1,15.969 C2.635,17.019 4.576,17.629 6.662,17.629 C13.454,17.629 17.17,12 17.17,7.129 C17.17,6.969 17.166,6.809 17.157,6.649 C17.879,6.129 18.504,5.478 19,4.74"></path></svg></a>
+				<a href="" class="uk-icon-button uk-icon" data-uk-icon="instagram"><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"> <path d="M13.55,1H6.46C3.45,1,1,3.44,1,6.44v7.12c0,3,2.45,5.44,5.46,5.44h7.08c3.02,0,5.46-2.44,5.46-5.44V6.44 C19.01,3.44,16.56,1,13.55,1z M17.5,14c0,1.93-1.57,3.5-3.5,3.5H6c-1.93,0-3.5-1.57-3.5-3.5V6c0-1.93,1.57-3.5,3.5-3.5h8 c1.93,0,3.5,1.57,3.5,3.5V14z"></path> <circle cx="14.87" cy="5.26" r="1.09"></circle> <path d="M10.03,5.45c-2.55,0-4.63,2.06-4.63,4.6c0,2.55,2.07,4.61,4.63,4.61c2.56,0,4.63-2.061,4.63-4.61 C14.65,7.51,12.58,5.45,10.03,5.45L10.03,5.45L10.03,5.45z M10.08,13c-1.66,0-3-1.34-3-2.99c0-1.65,1.34-2.99,3-2.99s3,1.34,3,2.99 C13.08,11.66,11.74,13,10.08,13L10.08,13L10.08,13z"></path></svg></a>
+			</div> -->
+		</div>
+	</div>
+	<div class="uk-section uk-section-xsmall" style="background-color: rgba(0,0,0,0.15)">
+		<div class="uk-container">
+			<div class="uk-grid uk-child-width-1-2@s uk-text-center uk-text-left@s" data-uk-grid="">
+				<div class="uk-text-small uk-text-muted uk-first-column"><div>			<div class="textwidget"><p>© 2019 Paradise Fitness and Health Pvt Ltd. All Rights Reserved.</p>
+</div>
+		</div>
+				</div>
+				<div class="uk-text-small uk-text-muted uk-text-center uk-text-right@s">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+        <div id='fb-root'></div>
+          <script type="rocketlazyloadscript">(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v6.0&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class='fb-customerchat'
+            attribution='wordpress'
+            attribution_version='2.2'
+            page_id=184585434900776
+          >
+        </div>
+        <script type='text/javascript' src='https://wavesgym.com/wp-includes/js/wp-embed.min.js?ver=5.8.1' id='wp-embed-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=2.9.5' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=2.8.5' id='elementor-sticky-js'></script>
+<script type='text/javascript' id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/wavesgym.com\/wp-admin\/admin-ajax.php","nonce":"8abe5f54b5","shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"google":{"title":"Google+","has_counter":true},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"delicious":{"title":"Delicious"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""}};
+</script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=2.8.5' id='elementor-pro-frontend-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-includes/js/jquery/ui/core.min.js?ver=1.12.1' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.7.6' id='elementor-dialog-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=2.9.5' id='share-link-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","downloadImage":"Download image"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"version":"2.9.5","urls":{"assets":"https:\/\/wavesgym.com\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"general":{"elementor_global_image_lightbox":"yes","elementor_lightbox_enable_counter":"yes","elementor_lightbox_enable_fullscreen":"yes","elementor_lightbox_enable_zoom":"yes","elementor_lightbox_enable_share":"yes","elementor_lightbox_title_src":"title","elementor_lightbox_description_src":"description"},"editorPreferences":[]},"post":{"id":1383,"title":"Best Gym for Exercise & Weight Loss Training in Mumbai | Waves Gym","excerpt":"","featuredImage":"https:\/\/wavesgym.com\/wp-content\/uploads\/2019\/10\/Vinnet.jpg"}};
+</script>
+<script type='text/javascript' src='https://wavesgym.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=2.9.5' id='elementor-frontend-js'></script>
+
+		</div>
+		<!-- OFFCANVAS -->
+
+<div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: false">
+	<div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
+		<button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
+		<ul class="uk-nav uk-nav-default uk-margin-top">			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-2016">
+				<a class="" target="" href="https://wavesgym.com/membership/">Membership</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1391">
+				<a class="" target="" href="https://wavesgym.com/classes/">Group Classes</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1945">
+				<a class="" target="" href="https://wavesgym.com/personal-training/">Personal Training</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-2724">
+				<a class="" target="" href="https://wavesgym.com/nutrition-counseling/">Nutrition Counseling</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1390">
+				<a class="" target="" href="https://wavesgym.com/offers/">Offers</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1389">
+				<a class="" target="" href="https://wavesgym.com/careers/">Careers</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->			<li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-1388">
+				<a class="" target="" href="https://wavesgym.com/location/">Location</a>			</li>
+
+			<!-- <li class="uk-active"><a href="#">Active</a></li>
+			<li class="uk-parent">
+				<a href="#">Parent</a>
+				<ul class="uk-nav-sub">
+					<li><a href="#">Sub item</a></li>
+					<li><a href="#">Sub item</a></li>
+				</ul>
+			</li>
+			<li class="uk-nav-header">Header</li>
+			<li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
+			<li class="uk-nav-divider"></li>
+			<li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li> -->		</ul>
+
+		<!-- <h3>Title</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+	</div>
+</div>			<!-- /OFFCANVAS -->
+	<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+
+
+	<!-- UIkit JS -->
+	<script type="rocketlazyloadscript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit.min.js"></script>
+	<script type="rocketlazyloadscript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.17/js/uikit-icons.min.js"></script>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

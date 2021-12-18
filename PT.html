@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Training</title>
+
+    <link rel="apple-touch-icon" sizes="192x192" href="favpack/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favpack/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favpack/favicon-16x16.png">
+    <link rel="manifest" href="favpack/site.webmanifest">
+    <link rel="mask-icon" href="favpack/browserconfig.xml" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+<!-- its phone icon -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+
+        }
+
+        li {
+            float: none;
+
+        }
+
+        li {
+
+            display: inline-block;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+
+        }
+
+        ul,
+        li,
+        a {
+            list-style-type: none;
+            text-decoration: none;
+            color: whitesmoke;
+
+        }
+
+
+
+        ul,
+        li,
+        a:hover {
+
+            color: black;
+
+
+
+        }
+
+
+        .nav {
+            background-image: url('images/PT.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding-bottom: 5%;
+
+
+
+        }
+
+        .join {
+            padding-top: 40%;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+
+
+
+        }
+
+
+
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+        }
+
+        li a:hover,
+        .dropdown:hover,
+        .dropbth:hover {
+            background-color: rgb(34, 172, 96);
+
+        }
+
+        li .dropdown {
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(204, 204, 204);;
+            min-width: 150px;
+            box-shadow:   rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+              
+              
+        }
+
+        .dropdown-content a {
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .part {
+            width: 100%;
+            margin: 0px;
+            display: flex;
+            margin-bottom: 100px;
+
+
+        }
+
+        .text {
+            text-decoration: none;
+
+
+        }
+
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            width: 76%;
+            margin-left: 10px;
+
+
+        }
+
+
+        .form {
+
+            line-height: 2.0;
+            font-size: 25px;
+            min-height: 50px;
+            padding: 2px 14px;
+            border-radius: 5px;
+            margin-left: 10px;
+
+        }
+
+
+        input {
+            height: 30px;
+        }
+
+        /* graidents Times */
+        .grad {
+            display: grid;
+            gap: 1rem;
+            grid-template-rows: repeat(1, 1fr);
+            margin-left: 0px;
+            max-height: 250px;
+            max-width: 800px;
+            padding: 20px;
+           
+        }
+
+        @media (min-width: 600px) {
+            .gradient-examples {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .example {
+            align-items: center;
+            border-radius: 16px;
+            box-shadow: 0 0 15px hsla(0deg, 0%, 0%, 0.5);
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            height: 240px;
+            width: 370px;
+            justify-content: center;
+            padding-left: 10px;
+            text-align: center;
+
+        }
+
+
+        .radial {
+
+
+            background-image: linear-gradient(to bottom left, rgb(199, 5, 79), rgb(34, 126, 187));
+        }
+
+        .footer {
+            margin: 0px;
+            color: whitesmoke;
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 50px;
+            height: 250px;
+            background-color: rgb(53, 51, 51);
+            font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+        }
+
+
+        .fa:hover {
+            opacity: 10;
+        }
+
+        .fa {
+            padding-left: 500px;
+            margin-left: 500px;
+            margin-top: -160px;
+            padding-bottom: 0px;
+            color: rgb(15, 170, 231);
+
+
+        }
+
+
+        .fitness {
+            margin: 0px;
+            color: rgb(161, 161, 161);
+            background-position: absolute;
+            padding-left: 100px;
+            padding-top: 10px;
+            height: 50px;
+            background-color: rgb(46, 44, 44);
+        }
+
+
+        .abut {
+            margin-left: 450px;
+            margin-top: -150px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="nav">
+        <ul class="nav2" style="color: white;">
+            <li> <a href="Home.html"><img src="images/logo the.png" style="border-radius: 50px; width: 50px; height: 50px;"></a></li>
+            <li><a href="membership.html" target="top">MEMBERSHIP</a> </li>
+            <li><a href="groupcls.html" target="self">GROUP CLASS</a></li>
+            <li><a href="PT.html" target="blank">PERSONAL TRAINING</a> </li>
+            <li><a href="offers.html" target="blank">OFFERS</a> </li>
+            <li><a href="careers.html" target="blank">CAREERS</a></li>
+            <li><a href="location.html" target="blank">LOCATION</a></li>
+
+            <li class="dropdown">
+                <a  class="dropbtn">SITE MAP</a>
+
+                <div class="dropdown-content">
+                    <a href="aboutus.html" target="blank">About us</a>
+                    <hr>
+                    <a href="groupcls.html" target="blank">Classes</a>
+                    <hr>
+                    <a href="offers.html" target="blank" >Offers</a>
+                    <hr>
+                    <a href="location.html" target="blank">Location</a>
+                    <hr>
+                    <a href="careers.html" target="blank">Careers At Master Gym</a>
+                    <hr>
+                    <a href="mempolicy.html">Membership Policy</a>
+                    <hr>
+                    <a href="terms.html">Terms & condition</a>
+                    <hr>
+
+
+                </div>
+
+            </li>
+
+
+
+        </ul>
+        <div class="join">
+
+            <h1>PERSONAL TRAINING </h1>
+            <h3> CERTIFIED PERSONAL TRAINERS</h3>
+
+        </div>
+    </div>
+
+
+
+    <div class="part">
+        <section class="text"
+            style="margin-top: 50px; font-family: Verdana, Geneva, Tahoma, sans-serif; margin-left: 70px;">
+            <H2> TAKE YOUR FITNESS TO THE NEXT LEVEL WITH OUR CERTIFIED PERSONAL TRAINERS.</H2>
+            <div style="color: rgb(100, 97, 97);">
+
+
+                Our internationally certified gym trainers help accomplish your fitness and weight loss goals, quicker.
+                They aid <br> in guiding you through a balanced combination of cardio, aerobic exercise, strength, and
+                weight training with <br> the help of the latest training techniques, technology, and high-end fitness
+                equipment. Our personal gym <br> trainers help you turn the <b style="background-color: rgb(0, 0, 0); color: whitesmoke;   
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                text-shadow: rgba(255,255,255,0.5) 0px 3px 3px; "> IMPOSSIBLE to I’M’POSSIBLE. </b>
+                <br><br>
+
+                Our personal trainers customize and personalize gym workouts as per individual needs and requirements.
+                Pair <br> this up with their fully guided nutrition program to attain the best results. <br> <br>
+
+                Waves Gym trainers are also accredited with Special Population Training. They are specially trained to
+                cater <br> to a wide variety of audiences.
+                <br><br>
+
+
+            </div>
+
+            <h3>Our certified & experienced personal gym trainers are:</h3>
+            <div style="font-family: Verdana, Geneva, Tahoma, sans-serif; color: rgb(100, 97, 97);">
+
+
+                1. Well-versed with the latest workout programs and equipment <br>
+                2. Regularized using advanced technology to track your fitness <br>
+                3. Always onto designing your exercise schedule, according to your individual fitness requirements <br>
+                4. Consistently upgraded with their fitness knowledge- eg, Kettlebell workshops, CrossFit training, <br>
+                nutrition programs, etc <br> <br>
+
+                Join us for a free personal training session and experience the difference at WavesGym. <br> <br>
+
+                For further information, please feel free to <li><a href="location.html"
+                        style="color: black; border-radius: 50%; background-color: chartreuse; "> Get in touch with
+                        us.</a></li>
+            </div>
+
+
+
+        </section>
+
+
+
+
+        <div style="margin-left: 30px; margin-top: 50px; padding: 0px;">
+            <h2 style="padding-left: 50px;">BOOK A FREE PT SESSION</h2>
+            <div class="form">
+
+                <form action="master gym.html" autocomplete="off">
+                    <label for="frame"></label>
+                    <input type="text" id="name" placeholder="Frist Name" required  style="font-size: 14px; ">
+
+                    <label for="name"></label>
+                    <input type="text" id="name" placeholder="Last Name" required hspace="5"  style="font-size: 14px; ">
+
+
+
+                    <label for="mail"></label>
+                    <input type="email" id="mail" placeholder="Email" required style="width: 360px; font-size: 14px;"><br>
+
+
+                    <label for="frame"></label>
+                    <input type="text" id="name" placeholder="Mobile Number " required style="width: 360px; font-size: 14px;" ><br>
+
+
+          
+
+            </div>
+            <section  style="font-family: Arial, Helvetica, sans-serif; color: grey; margin-left: 20px;">
+                <input type="checkbox" name="joining" id="ture" value="join">
+                <label for="joining" >
+                    I am interested in PT at Waves Gym Pune. <br> Please call me.</label><br> <br>
+                </section>
+            <button class="button">
+                BOOK NOW
+            </button><br>
+
+            <p style="border-bottom: 2px solid rgb(54, 54, 54); width: 80%;"></p><br>
+
+
+
+            <!-- graidents Times -->
+
+            <div class="grad">
+
+                <div class="example radial" style="font-family: Arial, Helvetica, sans-serif;">
+                    <div> 
+                        <a href="#" ><i class="material-icons" style="font-size:40px">&#xe0b0;</i></a> <br> <br>
+                    </div>
+                    Call us on +91 99200 84402 to know more about our membership options and <br> offers.
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ul">
+        <div>
+            <ol class="footer">
+                <p>
+                <h2 style="color:rgb(35, 168, 221)"> Master GYM</h2>
+                506 Morya Estate, Opposite Infiniti <br>
+                Mall, New Link Road, Andheri West, <br>
+                Mumbai – 400 053 <br>
+                Phone: +9122 6678 7970 <br>
+                Email: info@mastergym.com <br>
+
+
+                <div class="abut">
+                    <h2 style="color:rgb(35, 168, 221) ;">About The GYM</h2>
+                    <p>New year,new you! Thanks for <br> entering to win a free one-year <br> membership at master gym
+                        <br> We'll announce the winner on <br> january 2nd! <br>
+                    </p>
+                </div>
+
+
+                <div class="fa">
+
+
+                    <h2> Follow Us</h2>
+                    <a href=""><img src="facebook.png" alt="fb" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="instagram.png" alt="insta" width="50px" height="50px" hspace="10"></a>
+                    <a href=""><img src="twitter.png" alt="twit" width="50px" height="50px" hspace="10"></a>
+
+
+                </div>
+
+
+                </p>
+            </ol>
+            <div class="fitness" style="font-family: Arial, Helvetica, sans-serif;">
+                © 2020 Paradise Fitness and Health Pvt Ltd. All Rights Reserved.
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+     
+</body>
+
+</html>

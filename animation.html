@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation/media</title>
+    <style>
+        div{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            animation-name:animation1;
+            animation-duration: 20s;
+        }
+        @keyframes animation1{
+            0%{background-color: red;left: 0px;top: 0px;}
+            25%{background-color:orange;left: 300px;top: 0px; }
+            50%{background-color: yellow;left: 300px;top: 300px;}
+            75%{background-color: green;left: 0px;top: 300px; }
+            100%{background-color: blue;left: 0px;top: 0px;}
+        }
+        /* @media screen and (min-width:700px){
+            body{
+                background-color: aqua
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div>Hello World</div>
+</body>
+</html>
